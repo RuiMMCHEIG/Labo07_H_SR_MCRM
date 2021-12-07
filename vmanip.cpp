@@ -29,7 +29,7 @@ int vectSum(const vect& v) {
 }
 
 bool vectEqualSize(const vect& v1, const vect& v2) {
-   return v1.size() == v2.size();
+   return (v1.size() == v2.size());
 }
 
 //-------------------------------------------
@@ -66,7 +66,7 @@ bool isSquare(const matrix& m) {
 
 bool isRegular(const matrix& m) {
    if (m.empty()) return true;
-   return equal(m.begin(), m.end() + 1, m.begin() + 1, vectEqualSize);
+   return equal(m.begin(), m.end() - 1, m.begin() + 1, vectEqualSize);
 }
 
 size_t minCol(const matrix& m) {
