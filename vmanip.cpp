@@ -18,3 +18,51 @@ Compiler        : Mingw-w64 g++ 11.2.0
 #include "vmanip.h"
 
 using namespace std;
+
+std::ostream& operator << (std::ostream& os, const vect& m) {
+
+}
+
+ostream& operator << (ostream& os, const matrix& m) {
+   cout << "[";
+   for (const vect& v : m) {
+      cout << "(";
+      for (const int& value : v) {
+         cout << value;
+      }
+      cout << ")";
+   }
+   cout << "]";
+}
+
+bool isSquare(const matrix& m) {
+
+}
+
+bool isRegular(const matrix& m) {
+
+}
+
+size_t minCol(const matrix& m) {
+
+}
+
+vect sumLine(const matrix& m) {
+
+}
+
+vect sumColumn(const matrix& m) {
+
+}
+
+vect vectSumMin(const matrix& m) {
+
+}
+
+void suffleMatrix(matrix& m) {
+
+}
+
+void sortMatrix(matrix& m) {
+   
+}
