@@ -14,6 +14,7 @@ Compiler        : Mingw-w64 g++ 11.2.0
 */
 
 #include <cstdlib>
+#include <limits>
 #include "vmanip.h"
 using namespace std;
 
@@ -31,11 +32,14 @@ int main() {
    matrix testMatrix4{};
    matrix testMatrix5{ testVect5, testVect5, testVect5};
 
-   cout << testMatrix1;
-   cout << testMatrix2;
-   cout << testMatrix3;
-   cout << testMatrix4;
-   cout << testMatrix5;
+   cout << testMatrix1 << endl;
+   cout << testMatrix2 << endl;
+   cout << testMatrix3 << endl;
+   cout << testMatrix4 << endl;
+   cout << testMatrix5 << endl;
+   cout << testVect1   << endl;
+
+   cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
    return EXIT_SUCCESS;
 }

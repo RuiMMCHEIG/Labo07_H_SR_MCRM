@@ -9,8 +9,14 @@
 C:/Git/Labo07_H_SR_MCRM/main.cpp
 cstdlib
 -
+limits
+-
+vmanip.h
+C:/Git/Labo07_H_SR_MCRM/vmanip.h
+
+C:/Git/Labo07_H_SR_MCRM/vmanip.h
+vector
+-
 iostream
 -
-
-C:/Git/Labo07_H_SR_MCRM/vmanip.cpp
 

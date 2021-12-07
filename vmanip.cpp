@@ -50,8 +50,8 @@ bool isSquare(const matrix &m) {
 }
 
 bool isRegular(const matrix& m) {
-   if (m.empty()) return true;
-   return all_of(m.begin(), m.end(), )
+   /*if (m.empty()) return true;
+   return all_of(m.begin(), m.end(), )*/
 }
 
 size_t minCol(const matrix &m) {
