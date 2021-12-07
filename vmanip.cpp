@@ -12,3 +12,9 @@ Comment(s)      :
 Compiler        : Mingw-w64 g++ 11.2.0
 -----------------------------------------------------------------------------------
 */
+
+#include <algorithm>
+#include <numeric>
+#include "vmanip.h"
+
+using namespace std;
