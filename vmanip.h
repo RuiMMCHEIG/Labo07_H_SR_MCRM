@@ -28,7 +28,7 @@ using matrix = std::vector<vect>;
  * @param m
  * @return
  */
-std::ostream &operator<<(std::ostream &os, const vect &v); //Richard
+std::ostream& operator << (std::ostream& os, const vect& v); //Richard
 
 /**
  *

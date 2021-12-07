@@ -33,24 +33,25 @@ std::ostream &operator<<(std::ostream &os, const vect &v) {
     return os;
 }
 
-ostream &operator<<(ostream &os, const matrix &m) {
-    cout << "[";
-    for (const vect &v: m) {
-        cout << "(";
-        for (const int &value: v) {
-            cout << value;
-        }
-        cout << ")";
-    }
-    cout << "]";
+ostream& operator << (ostream& os, const matrix& m) {
+   //Start of Matrix
+   cout << "[";
+   for (matrix::const_iterator line = m.begin(); line != m.end(); ++line) {
+      if (*line != m.front()) cout << ",";
+      cout << *line;
+   }
+   //End of Matrix
+   cout << "]";
+   return os;
 }
 
 bool isSquare(const matrix &m) {
 
 }
 
-bool isRegular(const matrix &m) {
-
+bool isRegular(const matrix& m) {
+   if (m.empty()) return true;
+   return all_of(m.begin(), m.end(), )
 }
 
 size_t minCol(const matrix &m) {
@@ -73,6 +74,6 @@ void suffleMatrix(matrix &m) {
 
 }
 
-void sortMatrix(matrix &m) {
+void sortMatrix(matrix& m) {
 
 }
