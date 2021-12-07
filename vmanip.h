@@ -19,7 +19,7 @@ Compiler        : Mingw-w64 g++ 11.2.0
 #include <vector>
 #include <iostream>
 
-using vect   = std::vector<int>;
+using vect = std::vector<int>;
 using matrix = std::vector<vect>;
 
 /**
@@ -28,7 +28,7 @@ using matrix = std::vector<vect>;
  * @param m
  * @return
  */
-std::ostream& operator << (std::ostream& os, const vect& m); //Richard
+std::ostream &operator<<(std::ostream &os, const vect &v); //Richard
 
 /**
  *
@@ -36,60 +36,60 @@ std::ostream& operator << (std::ostream& os, const vect& m); //Richard
  * @param m
  * @return
  */
-std::ostream& operator << (std::ostream& os, const matrix& m); //Rui
+std::ostream &operator<<(std::ostream &os, const matrix &m); //Rui
 
 /**
  *
  * @param m
  * @return
  */
-bool isSquare(const matrix& m); //Richard
+bool isSquare(const matrix &m); //Richard
 
 /**
  *
  * @param m
  * @return
  */
-bool isRegular(const matrix& m); //Rui
+bool isRegular(const matrix &m); //Rui
 
 /**
  *
  * @param m
  * @return
  */
-size_t minCol(const matrix& m); //Richard
+size_t minCol(const matrix &m); //Richard
 
 /**
  *
  * @param m
  * @return
  */
-vect sumLine(const matrix& m); //Rui
+vect sumLine(const matrix &m); //Rui
 
 /**
  *
  * @param m
  * @return
  */
-vect sumColumn(const matrix& m); //Richard
+vect sumColumn(const matrix &m); //Richard
 
 /**
  *
  * @param m
  * @return
  */
-vect vectSumMin(const matrix& m); //Rui
+vect vectSumMin(const matrix &m); //Rui
 
 /**
  *
  * @param m
  */
-void suffleMatrix(matrix& m); //Richard
+void suffleMatrix(matrix &m); //Richard
 
 /**
  *
  * @param m
  */
-void sortMatrix(matrix& m); //Rui
+void sortMatrix(matrix &m); //Rui
 
 #endif //VMANIP_H
