@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Git/Labo07_H_SR_MCRM/main.cpp
+cstdlib
+-
+iostream
+-
+
+C:/Git/Labo07_H_SR_MCRM/vmanip.cpp
+
