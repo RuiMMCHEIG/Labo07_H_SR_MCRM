@@ -24,11 +24,11 @@ std::ostream &operator<<(std::ostream &os, const vect &v) {
     cout << "(";
     for (vect::const_iterator i = v.begin(); i != v.end(); ++i) {
         cout << *i;
-        if (i != v.end()) {
-            cout << ", ";
+        if (next(i) != v.end()) {
+            cout << ", " ;
         }
     }
-    cout << ")\n";
+    cout << ")";
 
     return os;
 }
