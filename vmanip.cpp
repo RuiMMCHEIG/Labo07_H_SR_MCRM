@@ -40,10 +40,6 @@ bool vectCompSizeLessThan(const vect &v1, const vect &v2) {
    return v1.size() < v2.size();
 }
 
-bool vectCompSizeGreaterThan(const vect &v1, const vect &v2) {
-   return v1.size() > v2.size();
-}
-
 // Testing stuff for sumColumn function
 vect sumColumnFunction(vect &v1, const vect &v2) {
    transform(v2.begin(), v2.end(), v1.begin(), v1.begin(), std::plus<>());
@@ -51,7 +47,7 @@ vect sumColumnFunction(vect &v1, const vect &v2) {
 }
 
 size_t maxCol(const matrix &m) {
-   return min_element(m.begin(), m.end(), vectCompSizeGreaterThan)->size();
+   return (*max_element(m.begin(), m.end(), vectCompSizeLessThan)).size();
 }
 
 //-------------------------------------------------------------------------------------------
@@ -104,8 +100,7 @@ vect sumLine(const matrix &m) {
 }
 
 vect sumColumn(const matrix &m) {
-   //return accumulate(m.begin(),m.end(), ,sumColumnFunction)
-   return m[0];
+   return accumulate(m.begin(),m.end(),vect(maxCol(m)) ,sumColumnFunction);
 }
 
 vect vectSumMin(const matrix &m) {
@@ -114,9 +109,9 @@ vect vectSumMin(const matrix &m) {
 }
 
 void shuffleMatrix(matrix &m) {
-   // Reference : https://www.cplusplus.com/reference/algorithm/shuffle/?kw=shuffle
-   // unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-   // std::shuffle(m.begin(), m.end(), std::default_random_engine(seed));
+// Reference : https://www.cplusplus.com/reference/algorithm/shuffle/?kw=shuffle
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    std::shuffle(m.begin(), m.end(), std::default_random_engine(seed));
 }
 
 void sortMatrix(matrix &m) {
