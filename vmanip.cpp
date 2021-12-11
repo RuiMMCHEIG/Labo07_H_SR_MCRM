@@ -17,8 +17,8 @@ Compiler        : Mingw-w64 g++ 11.2.0
 #include <algorithm>
 #include <numeric>
 #include <random>
+#include <chrono>
 #include "vmanip.h"
-
 
 using namespace std;
 
@@ -110,7 +110,7 @@ vect vectSumMin(const matrix &m) {
 
 void shuffleMatrix(matrix &m) {
 // Reference : https://www.cplusplus.com/reference/algorithm/shuffle/?kw=shuffle
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    unsigned seed = chrono::system_clock::now().time_since_epoch().count();
     std::shuffle(m.begin(), m.end(), std::default_random_engine(seed));
 }
 
