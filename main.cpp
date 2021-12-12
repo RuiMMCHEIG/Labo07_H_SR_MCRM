@@ -1,12 +1,11 @@
 /*
 -------------------------------------------------------------------------------------------------
 Filename        : main.cpp
-Laboratory name : Labo 07 Vecteur et Matrices
+Laboratory name : Labo 07 Vector & Matrix
 Author(s)       : Rui Manuel Mota Carneiro, Sierra Richard
 Creation date   : 07.12.2021
 
-Description     : Library providing the elements necessary for an easy manipulation of vectors
-                  and integer matrices.
+Description     : Unit tests of vmanip library.
 
 Comment(s)      :
 
@@ -95,7 +94,7 @@ int main() {
         << sumColumn(testMatrix3) << endl;
    cout << "Matrice 4 colonne (A = rien ou 0)      : "
         << sumColumn(testMatrix4) << endl;
-   cout << "Matrice 5 colonne (A = 5, 7, 9)        : "
+   cout << "Matrice 5 colonne (A = 5,7,9)          : "
         << sumColumn(testMatrix5) << endl;
    cout << endl;
    //Vector with minimum Sum
@@ -130,6 +129,7 @@ int main() {
    cout << "Matrice 5 ordonnee : " << testMatrix5 << endl;
    cout << endl;
 
+   //End of program
    cout << "Appuyez sur ENTER pour continuer..." << endl;
    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 

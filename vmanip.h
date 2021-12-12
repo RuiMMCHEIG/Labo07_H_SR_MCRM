@@ -1,7 +1,7 @@
 /*
 -------------------------------------------------------------------------------------------------
 Filename        : vmanip.h
-Laboratory name : Labo 07 Vecteur et Matrices
+Laboratory name : Labo 07 Vector & Matrix
 Author(s)       : Rui Manuel Mota Carneiro, Sierra Richard
 Creation date   : 07.12.2021
 
@@ -24,73 +24,73 @@ using vect = std::vector<int>;
 using matrix = std::vector<vect>;
 
 /**
- *
+ * Displays a Vector in the format (v1, v2, ..., vn)
  * @param os Output stream
  * @param v Vector
- * @return Displays a Vector in the format (v1, v2, ..., vn)
+ * @return Output stream
  */
 std::ostream &operator<<(std::ostream &os, const vect &v); //Richard
 
 /**
- *
+ * Displays a Matrix in the format [(..), (..), (..)]
  * @param os Output stream
  * @param m Matrix
- * @return Displays a Matrix in the format [(..), (..), (..)]
+ * @return Output Stream
  */
 std::ostream &operator<<(std::ostream &os, const matrix &m); //Rui
 
 /**
- *
+ * Returns a boolean indicating whether the matrix is square
  * @param m Matrix
- * @return Returns a boolean indicating whether the matrix is square
+ * @return Boolean indicating whether the matrix is square
  */
 bool isSquare(const matrix &m); //Richard
 
 /**
- *
+ * Returns a boolean indicating if the matrix is regular (all rows of the same size)
  * @param m Matrix
- * @return Returns a boolean indicating if the matrix is regular (all rows of the same size)
+ * @return Boolean indicating if the matrix is regular
  */
 bool isRegular(const matrix &m); //Rui
 
 /**
- *
+ * Returns the minimum length of vectors of a matrix
  * @param m Matrix
- * @return Returns the minimum length of vectors of a matrix
+ * @return Minimum length
  */
 size_t minCol(const matrix &m); //Richard
 
 /**
- *
+ * Returns a vector containing the sum of the values of each of the rows
  * @param m Matrix
- * @return Returns a vector containing the sum of the values of each of the rows.
+ * @return Vector containing the sum of the values of each of the rows
  */
 vect sumLine(const matrix &m); //Rui
 
 /**
- *
+ * Returns a vector containing the sum of the values of each of the columns
  * @param m Matrix
- * @return Returns a vector containing the sum of the values of each of the columns.
+ * @return Vector containing the sum of the values of each of the columns
  */
 vect sumColumn(const matrix &m); //Richard
 
 /**
- *
+ * Return the vector of a matrix with the lowest sum of values.
+ * If several vectors have the same sum,
+ * the function returns the one with the lowest index
  * @param m Matrix
- * @return Return the vector of a matrix with the lowest sum of values.
- * If several vectors have the same sum, the function returns the one with the lowest index.
+ * @return Vector with the lowest sum of values
  */
 vect vectSumMin(const matrix &m); //Rui
 
 /**
- * Mix randomly the vectors of a matrix without altering the vectors.
- * The generator seed is based on the current time
+ * Shuffle the vectors of a matrix without altering them
  * @param m Matrix
  */
 void shuffleMatrix(matrix &m); //Richard
 
 /**
- * Sort a matrix in ascending order based on the min element of a vector.
+ * Sort a matrix in ascending order.
  * @param m Matrix
  */
 void sortMatrix(matrix &m); //Rui

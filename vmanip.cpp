@@ -1,7 +1,7 @@
 /*
 -------------------------------------------------------------------------------------------------
 Filename        : vmanip.cpp
-Laboratory name : Labo 07 Vecteur et Matrices
+Laboratory name : Labo 07 Vector & Matrix
 Author(s)       : Rui Manuel Mota Carneiro, Sierra Richard
 Creation date   : 07.12.2021
 
@@ -26,28 +26,35 @@ using namespace std;
 //  Local functions
 //-------------------------------------------------------------------------------------------
 
+/**
+ * Sum the values of a vector
+ * @param v Vector to sum
+ * @return Sum of the vector
+ */
 int vectSum(const vect &v) {
    int i = 0;
    i = accumulate(v.begin(), v.end(), i);
    return i;
 }
 
+/**
+ * Checks if two vectors have the same size
+ * @param v1 First vector to check
+ * @param v2 Second vector to check
+ * @return If the sizes match
+ */
 bool vectEqualSize(const vect &v1, const vect &v2) {
    return v1.size() == v2.size();
 }
 
-bool vectCompSizeLessThan(const vect &v1, const vect &v2) {
+/**
+ * Checks if a vector is smaller than another
+ * @param v1 First vector to check
+ * @param v2 Second vector to check
+ * @return If the first vector is smaller than the second
+ */
+bool vectLesserSize(const vect &v1, const vect &v2) {
    return v1.size() < v2.size();
-}
-
-// Testing stuff for sumColumn function
-vect sumColumnFunction(vect &v1, const vect &v2) {
-   transform(v2.begin(), v2.end(), v1.begin(), v1.begin(), std::plus<>());
-   return v1;
-}
-
-size_t maxCol(const matrix &m) {
-   return (*max_element(m.begin(), m.end(), vectCompSizeLessThan)).size();
 }
 
 //-------------------------------------------------------------------------------------------
@@ -90,7 +97,7 @@ bool isRegular(const matrix &m) {
 }
 
 size_t minCol(const matrix &m) {
-   return min_element(m.begin(), m.end(), vectCompSizeLessThan)->size();
+   return min_element(m.begin(), m.end(), vectLesserSize)->size();
 }
 
 vect sumLine(const matrix &m) {
@@ -100,7 +107,14 @@ vect sumLine(const matrix &m) {
 }
 
 vect sumColumn(const matrix &m) {
-   return accumulate(m.begin(),m.end(),vect(maxCol(m)) ,sumColumnFunction);
+   vect sum(max_element(m.begin(), m.end(), vectLesserSize)->size());
+   fill(sum.begin(), sum.end(), 0);
+   for (const vect &v : m) {
+      for (size_t i = 0; i < v.size(); ++i) {
+         sum.at(i) += v.at(i);
+      }
+   }
+   return sum;
 }
 
 vect vectSumMin(const matrix &m) {
@@ -110,7 +124,7 @@ vect vectSumMin(const matrix &m) {
 
 void shuffleMatrix(matrix &m) {
 // Reference : https://www.cplusplus.com/reference/algorithm/shuffle/?kw=shuffle
-    unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+    unsigned seed = unsigned(chrono::system_clock::now().time_since_epoch().count());
     std::shuffle(m.begin(), m.end(), std::default_random_engine(seed));
 }
 
